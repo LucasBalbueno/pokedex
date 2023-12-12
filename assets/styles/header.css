@@ -1,0 +1,30 @@
+.header {
+    text-align: center;
+    background-color: rgb(37, 37, 37);
+    padding: 2rem;
+}
+
+.header__img {
+    width: 25rem ;
+    
+}
+
+.header__input {
+    width: 12rem;
+    height: 3rem;
+    border: 2px solid #3d7dca;
+    border-radius: 20px;
+    padding: 5px 20px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #d4b52b;
+    outline: none;
+}
+
+/* Estilo do campo de pesquisa quando focado */
+.header__input:focus {
+    border-color: #ffcb05;
+    box-shadow: 0 0 10px #3d7dca;
+}
+
+
