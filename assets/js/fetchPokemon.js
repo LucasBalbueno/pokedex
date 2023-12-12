@@ -4,13 +4,14 @@ async function fetchPokemon(urlApi = 'https://pokeapi.co/api/v2/pokemon?') {
   await fetch(urlApi)
     .then(response => response.json())
     .then(async data => {
-      const PokemonDetais = await Promise.all(data.results.map(async (pokemon) => { 
+      const PokemonDetails = await Promise.all(data.results.map(async (pokemon) => { 
         const response = await fetch(pokemon.url);
         return response.json();
       }));
     
-      data.results.forEach((pokemon, index) => {
-        criarCard(pokemon, PokemonDetais[index]);
+      PokemonDetails.forEach((pokemon) => {
+        criarCard(pokemon);
+        console.log(pokemon)
       });
     })
     .catch(error => console.error('Erro:', error));

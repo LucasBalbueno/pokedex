@@ -3,13 +3,16 @@ import pokemon from "./fetchPokemon.js";
 // Obtém o elemento onde os nomes dos Pokémon serão inseridos
 const pokemonList = document.getElementById('pokemonList');
 
-const criarCard = (pokemon, abilities) => {
+const criarCard = (pokemon) => {
+    
+    const id = pokemon.id
+
     const card = document.createElement('div');
     card.style="width: 18rem;"
     card.classList.add('card');
 
     const img = document.createElement('img')
-    img.src = 'https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2023/07/20/pokemon-mestre-anime-qxtbzrqh66us.jpg'
+    img.src = `https://github.com/wellrccity/pokedex-html-js/blob/master/assets/img/pokemons/poke_${id}.gif?raw=true`
 
 
     const conteudo = document.createElement('div')
@@ -24,7 +27,7 @@ const criarCard = (pokemon, abilities) => {
 
     // // Define o texto do parágrafo para o nome do Pokémon
     titulo.textContent = pokemon.name;
-    texto.textContent = abilities.id
+    texto.textContent = id
 
     card.appendChild(img);
     card.appendChild(conteudo);
