@@ -3,10 +3,14 @@ import criarCard from "./cardsPokemon.js";
 async function fetchPokemon(urlApi = 'https://pokeapi.co/api/v2/pokemon?') {
   await fetch(urlApi)
     .then(response => response.json())
-    .then(data => {
-      data.results.forEach(async pokemon => {
-        const pokemonData = await fetch(pokemon.url).then(response => response.json());
-        criarCard(pokemon, pokemonData);
+    .then(async data => {
+      const PokemonDetais = await Promise.all(data.results.map(async (pokemon) => { 
+        const response = await fetch(pokemon.url);
+        return response.json();
+      }));
+    
+      data.results.forEach((pokemon, index) => {
+        criarCard(pokemon, PokemonDetais[index]);
       });
     })
     .catch(error => console.error('Erro:', error));
