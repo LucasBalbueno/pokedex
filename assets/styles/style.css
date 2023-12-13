@@ -12,9 +12,9 @@
 .card img {
     position: absolute;
     top: 50%;
-    right: 0%;
+    right: -5%;
     transform: translate(-50%, -50%);
-    max-height: 120px;
+    max-height: 8em;
     z-index: 1;
 }
 
@@ -24,3 +24,5 @@
     padding: 1rem;
     margin-left: 10px;
 }
+
+
