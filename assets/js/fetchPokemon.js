@@ -11,7 +11,7 @@ async function fetchPokemon(urlApi = 'https://pokeapi.co/api/v2/pokemon?') {
     
       PokemonDetails.forEach((pokemon) => {
         criarCard(pokemon);
-        console.log(pokemon)
+        console.log(pokemon.sprites.front_shiny)
       });
     })
     .catch(error => console.error('Erro:', error));

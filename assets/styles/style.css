@@ -9,20 +9,29 @@
 .card {
     margin: 1rem;
 }
-.card img {
-    position: absolute;
-    top: 50%;
-    right: -5%;
-    transform: translate(-50%, -50%);
-    max-height: 8em;
-    z-index: 1;
+
+.divImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 17rem;
+    height: 15rem;
+    overflow: hidden;
+    background-image: url(../imgs/CenárioPokemon.jfif);
+    background-position: center;
+    width: 100%;
+    background-repeat: no-repeat;
 }
 
-.card {
-    position: relative;
-    float: right;
-    padding: 1rem;
-    margin-left: 10px;
+.pokemonImgPadrao {
+    width: 12rem;
 }
 
+/* .pokemonImg {
+    MUDAR TAMANHO PARA RESPONSIVIDADE
+} */
 
+
+.card-title {
+    text-transform: capitalize;
+}
