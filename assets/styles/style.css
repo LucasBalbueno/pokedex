@@ -31,7 +31,17 @@
     MUDAR TAMANHO PARA RESPONSIVIDADE
 } */
 
+.tituloID {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .card-title {
     text-transform: capitalize;
+    font-size: 20px;
+}
+
+.numId {
+    font-size: 17px;
 }

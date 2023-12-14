@@ -1,5 +1,6 @@
-import fetchPokemon from "./fetchPokemon.js";
+import { fetchPokemon, fetchSpecie } from "./fetchPokemon.js";
 import './pagination.js'
 
 
 fetchPokemon()
+fetchSpecie()

@@ -1,4 +1,4 @@
-import fetchPokemon from "./fetchPokemon.js";
+import { fetchPokemon, fetchSpecie } from "./fetchPokemon.js";
 
 // PAGINATION
 const pokemonList = document.getElementById('pokemonList');
