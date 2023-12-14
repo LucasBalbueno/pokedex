@@ -1,5 +1,16 @@
 @import url(./header.css);
 
+main {
+    background-color: rgb(37, 37, 37);;
+}
+
+.container__pokemons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 2rem;
+}
+
 .pokemonList {
     display: flex;
     flex-wrap: wrap;
@@ -50,4 +61,17 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.page-item {
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+.button__pagination {
+    display: flex;
+    gap: 1rem;
+    margin-right: 8.5rem;
+    margin-top: 1rem;
 }
