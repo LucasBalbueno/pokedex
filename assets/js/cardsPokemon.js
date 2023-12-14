@@ -61,6 +61,10 @@ const pokemonList = document.getElementById('pokemonList');
     textoDescriçao.classList.add('card-text');
     textoDescriçao.textContent = descricao;
 
+    const buttonPokedex = document.createElement('p');
+    buttonPokedex.classList.add('btn');
+    buttonPokedex.classList.add('btn-danger');
+    buttonPokedex.textContent = "Mais informações"
 
     // ESTRUTURANDO ELEMENTOS HTML
     pokemonList.appendChild(card);
@@ -72,7 +76,7 @@ const pokemonList = document.getElementById('pokemonList');
     tituloId.appendChild(numId);
     conteudo.appendChild(texto);
     conteudo.appendChild(textoDescriçao);
-
+    conteudo.appendChild(buttonPokedex);
     
     
 }
