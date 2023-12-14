@@ -7,8 +7,8 @@ const pokemonList = document.getElementById('pokemonList');
     // PEGANDO AS INFORMAÇÕES
     const id = pokemon.id;
     const type = pokemon.types[0].type.name
-
-    // console.log(pokemon.types)
+    const descricao = await fetchSpecie(id)
+    
 
 
     // CRIANDO DIV CARD
@@ -57,6 +57,10 @@ const pokemonList = document.getElementById('pokemonList');
     texto.classList.add('card-text');
     texto.textContent = `Tipo: ${type}`
 
+    const textoDescriçao = document.createElement('p');
+    textoDescriçao.classList.add('card-text');
+    textoDescriçao.textContent = descricao;
+
 
     // ESTRUTURANDO ELEMENTOS HTML
     pokemonList.appendChild(card);
@@ -67,10 +71,10 @@ const pokemonList = document.getElementById('pokemonList');
     tituloId.appendChild(titulo);
     tituloId.appendChild(numId);
     conteudo.appendChild(texto);
+    conteudo.appendChild(textoDescriçao);
 
-
-    const descricao = await fetchSpecie(id)
-    console.log(descricao)
+    
+    
 }
 
 export default criarCard;

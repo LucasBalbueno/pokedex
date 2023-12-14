@@ -22,7 +22,7 @@ async function fetchSpecie(id) {
     descricao = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
       .then(response => response.json())
       .then((data) => {
-        const descricaoPokemon = data.flavor_text_entries[1].flavor_text
+        const descricaoPokemon = data.flavor_text_entries[8].flavor_text
         return descricaoPokemon
 
         // LEVAR ESSA INFORMAÇÃO PARA A FUNÇÃO CRIAR CARD
