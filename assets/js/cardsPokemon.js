@@ -8,7 +8,7 @@ const pokemonList = document.getElementById('pokemonList');
     const id = pokemon.id;
     const type = pokemon.types[0].type.name
 
-    console.log(pokemon.types)
+    // console.log(pokemon.types)
 
 
     // CRIANDO DIV CARD
@@ -69,7 +69,8 @@ const pokemonList = document.getElementById('pokemonList');
     conteudo.appendChild(texto);
 
 
-    await fetchSpecie(id)
+    const descricao = await fetchSpecie(id)
+    console.log(descricao)
 }
 
 export default criarCard;
