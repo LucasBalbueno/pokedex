@@ -64,6 +64,8 @@ const criarCard = async (pokemon) => {
     const buttonPokedex = document.createElement('p');
     buttonPokedex.classList.add('btn');
     buttonPokedex.classList.add('btn-danger');
+    buttonPokedex.setAttribute('data-bs-toggle', 'modal');
+    buttonPokedex.setAttribute('data-bs-target', '#exampleModal');
     buttonPokedex.textContent = "Mais informações"
 
     // ESTRUTURANDO ELEMENTOS HTML
