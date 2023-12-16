@@ -9,7 +9,7 @@ async function fetchPokemon(urlApi = 'https://pokeapi.co/api/v2/pokemon?') {
         return response.json();
       }));
 
-      PokemonDetails.forEach((pokemon) => {
+      PokemonDetails.sort((a, b) => a.id - b.id).forEach((pokemon) => {
         criarCard(pokemon);
       });
     })
@@ -22,10 +22,8 @@ async function fetchSpecie(id) {
     descricao = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
       .then(response => response.json())
       .then((data) => {
-        const descricaoPokemon = data.flavor_text_entries[8].flavor_text
+        const descricaoPokemon = data.flavor_text_entries[2].flavor_text
         return descricaoPokemon
-
-        // LEVAR ESSA INFORMAÇÃO PARA A FUNÇÃO CRIAR CARD
       })
       .catch(error => console.error('Erro:', error));
   } 
@@ -33,6 +31,3 @@ async function fetchSpecie(id) {
 }
 
 export { fetchPokemon, fetchSpecie };
-
-
-// LEVAR INFORMAÇÃO DESCRIÇÃO PARA A FUNÇÃO CRIAR CARDS

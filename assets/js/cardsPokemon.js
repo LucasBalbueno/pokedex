@@ -2,27 +2,27 @@ import { fetchPokemon, fetchSpecie } from "./fetchPokemon.js";
 
 
 const pokemonList = document.getElementById('pokemonList');
-    const criarCard = async (pokemon) => {
+const criarCard = async (pokemon) => {
 
     // PEGANDO AS INFORMAÇÕES
     const id = pokemon.id;
     const type = pokemon.types[0].type.name
     const descricao = await fetchSpecie(id)
-    
 
 
     // CRIANDO DIV CARD
     const card = document.createElement('div');
-    card.style="width: 18rem;";
+    card.style = "width: 18rem;";
     card.classList.add('card');
 
 
-   // CRIANDO IMAGEM POKEMON
+    // CRIANDO IMAGEM POKEMON
     const divImg = document.createElement('div');
     divImg.classList.add('divImg');
     const pokemonImg = document.createElement('img');
+    const pokeImagemApi = pokemon.sprites.front_default ||  "https://cdn-icons-png.flaticon.com/512/188/188918.png";
     if (id > 706) {
-        pokemonImg.src = pokemon.sprites.front_shiny;
+        pokemonImg.src = pokeImagemApi;
         pokemonImg.classList.add('pokemonImgPadrao');
     } else {
         pokemonImg.src = `https://github.com/wellrccity/pokedex-html-js/blob/master/assets/img/pokemons/poke_${id}.gif?raw=true`;
@@ -77,8 +77,6 @@ const pokemonList = document.getElementById('pokemonList');
     conteudo.appendChild(texto);
     conteudo.appendChild(textoDescriçao);
     conteudo.appendChild(buttonPokedex);
-    
-    
 }
 
 export default criarCard;

@@ -36,11 +36,8 @@ main {
 
 .pokemonImgPadrao {
     width: 12rem;
+    max-width: 200px;
 }
-
-/* .pokemonImg {
-    MUDAR TAMANHO PARA RESPONSIVIDADE
-} */
 
 .tituloID {
     display: flex;
