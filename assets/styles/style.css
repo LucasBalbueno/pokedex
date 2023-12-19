@@ -7,7 +7,7 @@ main {
 .container__pokemons {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     padding: 2rem;
 }
 
@@ -69,6 +69,5 @@ main {
 .button__pagination {
     display: flex;
     gap: 1rem;
-    margin-right: 8.5rem;
     margin-top: 1rem;
 }
