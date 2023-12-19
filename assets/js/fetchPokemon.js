@@ -9,12 +9,7 @@ async function fetchPokemon(urlApi = 'https://pokeapi.co/api/v2/pokemon?') {
     for (const pokemon of pokemons) {
       const parts = pokemon.url.split("/");
       const id = parts[parts.length - 2];
-      
-      //console.log(pokemon.id)
-      
-     
       await fetchAndCreatePokemon(id);
-      
     }
   } catch (error ){
     console.log('erro na função fetchPokemon', error)
@@ -39,7 +34,7 @@ async function fetchSpecie(id) {
     descricao = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
       .then(response => response.json())
       .then((data) => {
-        const descricaoPokemon = data.flavor_text_entries[2].flavor_text
+        const descricaoPokemon = data.flavor_text_entries[2].flavor_text.replaceAll('\f', ' ')
         return descricaoPokemon
       })
       .catch(error => console.error('Erro:', error));

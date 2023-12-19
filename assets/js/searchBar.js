@@ -8,5 +8,16 @@ const pokemonList = document.getElementById('pokemonList');
 form.addEventListener('submit', async(event) => {
     event.preventDefault();
     pokemonList.textContent = ''
-    await fetchAndCreatePokemon(input.value.toLowerCase());
+    try {
+      const validations = input.value.toLowerCase().trim().replace((/\s/g), '')
+      await fetchAndCreatePokemon(validations);
+    } catch (erro) {
+      console.log('nao')
+
+      const textoErro = document.createElement('p');
+      textoErro.textContent = 'Pokemon não encontrado!';
+      textoErro.classList.add('textoErroBusca')
+
+      pokemonList.appendChild(textoErro);
+    }
   });

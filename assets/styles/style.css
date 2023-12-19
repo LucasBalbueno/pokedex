@@ -1,14 +1,11 @@
 @import url(./header.css);
 
-main {
-    background-color: rgb(37, 37, 37);;
-}
-
 .container__pokemons {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2rem;
+    background-color: rgb(37, 37, 37);
 }
 
 .pokemonList {
@@ -70,4 +67,9 @@ main {
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
+}
+
+.textoErroBusca {
+    color: #fff;
+    font-size: 20px;
 }

@@ -3,4 +3,3 @@ import './pagination.js'
 import './searchBar.js'
 
 fetchPokemon()
-//fetchSpecie()

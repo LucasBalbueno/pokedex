@@ -20,7 +20,7 @@ const criarCard = async (pokemon) => {
     const divImg = document.createElement('div');
     divImg.classList.add('divImg');
     const pokemonImg = document.createElement('img');
-    const pokeImagemApi = pokemon.sprites.front_default ||  "https://cdn-icons-png.flaticon.com/512/188/188918.png";
+    const pokeImagemApi = pokemon.sprites.front_default ||  '../assets/imgs/Pokebola.png';
     if (id > 706) {
         pokemonImg.src = pokeImagemApi;
         pokemonImg.classList.add('pokemonImgPadrao');
