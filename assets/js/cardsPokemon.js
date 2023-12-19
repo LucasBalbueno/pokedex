@@ -28,7 +28,7 @@ const criarCard = async (pokemon) => {
         pokemonImg.src = `https://github.com/wellrccity/pokedex-html-js/blob/master/assets/img/pokemons/poke_${id}.gif?raw=true`;
         pokemonImg.classList.add('pokemonImg');
     }
-
+    
 
     // CRIANDO DIV CONTÉUDO
     const conteudo = document.createElement('div');

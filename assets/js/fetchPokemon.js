@@ -7,18 +7,30 @@ async function fetchPokemon(urlApi = 'https://pokeapi.co/api/v2/pokemon?') {
     const pokemons = data.results
   
     for (const pokemon of pokemons) {
-      const pokemonData = await fetchPokemonDetails(pokemon.url)
-      await criarCard(pokemonData);
+      const parts = pokemon.url.split("/");
+      const id = parts[parts.length - 2];
+      
+      //console.log(pokemon.id)
+      
+     
+      await fetchAndCreatePokemon(id);
+      
     }
   } catch (error ){
-    console.log('erro na função fetchPokemon', erro)
+    console.log('erro na função fetchPokemon', error)
   }
 }
 
-async function fetchPokemonDetails (url) {
-  const response = await fetch(url)
-  const pokemon = await response.json()
-  return pokemon
+async function fetchPokemonDetails (pokemonIdentifier) {
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonIdentifier}`);
+  const pokemon = await response.json();
+  return pokemon;
+  
+}
+
+async function fetchAndCreatePokemon(pokemonIdentifier) {
+  const pokemonData = await fetchPokemonDetails(pokemonIdentifier)
+  return await criarCard(pokemonData);
 }
 
 async function fetchSpecie(id) {
@@ -35,4 +47,4 @@ async function fetchSpecie(id) {
   return descricao
 }
 
-export { fetchPokemon, fetchSpecie };
+export { fetchPokemon, fetchSpecie, fetchAndCreatePokemon };
