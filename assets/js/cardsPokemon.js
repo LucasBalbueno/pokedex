@@ -1,22 +1,17 @@
 import { fetchPokemon, fetchSpecie } from "./fetchPokemon.js";
 
-
 const pokemonList = document.getElementById('pokemonList');
+
 const criarCard = async (pokemon) => {
 
-    // PEGANDO AS INFORMAÇÕES
     const id = pokemon.id;
     const type = pokemon.types[0].type.name
     const descricao = await fetchSpecie(id)
 
-
-    // CRIANDO DIV CARD
     const card = document.createElement('div');
     card.style = "width: 18rem;";
     card.classList.add('card');
 
-
-    // CRIANDO IMAGEM POKEMON
     const divImg = document.createElement('div');
     divImg.classList.add('divImg');
     const pokemonImg = document.createElement('img');
@@ -29,30 +24,20 @@ const criarCard = async (pokemon) => {
         pokemonImg.classList.add('pokemonImg');
     }
     
-
-    // CRIANDO DIV CONTÉUDO
     const conteudo = document.createElement('div');
     conteudo.classList.add('card-body');
 
-
-    // CRIANDO DIV TÍTULO E ID
     const tituloId = document.createElement('div');
     tituloId.classList.add('tituloID');
 
-
-    // CRIANDO TÍTULO
     const titulo = document.createElement('h1');
     titulo.classList.add("card-title");
     titulo.textContent = pokemon.name;
 
-
-    // CRIANDO ID
     const numId = document.createElement('h2');
     numId.classList.add('numId');
     numId.textContent = `Nº: ${id}`;
 
-
-    // CRIANDO TEXTO
     const texto = document.createElement('p');
     texto.classList.add('card-text');
     texto.textContent = `Tipo: ${type}`
@@ -68,7 +53,6 @@ const criarCard = async (pokemon) => {
     buttonPokedex.setAttribute('data-bs-target', '#exampleModal');
     buttonPokedex.textContent = "Mais informações"
 
-    // ESTRUTURANDO ELEMENTOS HTML
     pokemonList.appendChild(card);
     card.appendChild(divImg);
     divImg.appendChild(pokemonImg);
@@ -79,6 +63,36 @@ const criarCard = async (pokemon) => {
     conteudo.appendChild(texto);
     conteudo.appendChild(textoDescriçao);
     conteudo.appendChild(buttonPokedex);
+    
+
+    const modalPopup = document.getElementById('modalPopup')
+
+    const modalDiv = document.createElement('div');
+    modalDiv.classList.add('modal', 'fade');
+    modalDiv.setAttribute('id', 'exampleModal');
+    modalDiv.setAttribute('tabindex', '-1');
+    modalDiv.setAttribute('aria-labelledby', 'exampleModalLabel');
+    modalDiv.setAttribute('aria-hidden', 'true');
+    
+    const modalDialogDiv = document.createElement('div');
+    modalDialogDiv.classList.add('modal-dialog');
+
+    const imgElement = document.createElement('div');
+    imgElement.classList.add('ImgFundoPokedex')
+
+    const divConteudo = document.createElement('div')
+    divConteudo.classList.add('divConteudo')
+
+    // BUSCAR NOMES INDIVIDUAIS
+    divConteudo.textContent = pokemon.name
+
+    imgElement.appendChild(divConteudo)
+    modalDialogDiv.appendChild(imgElement);
+    modalDiv.appendChild(modalDialogDiv);
+    
+    modalPopup.appendChild(modalDiv)
+    
+    
 }
 
 export default criarCard;

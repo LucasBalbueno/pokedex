@@ -12,12 +12,9 @@ form.addEventListener('submit', async(event) => {
       const validations = input.value.toLowerCase().trim().replace((/\s/g), '')
       await fetchAndCreatePokemon(validations);
     } catch (erro) {
-      console.log('nao')
-
       const textoErro = document.createElement('p');
       textoErro.textContent = 'Pokemon não encontrado!';
       textoErro.classList.add('textoErroBusca')
-
       pokemonList.appendChild(textoErro);
     }
   });

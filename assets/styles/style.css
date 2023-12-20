@@ -1,4 +1,5 @@
 @import url(./header.css);
+@import url(./modal.css);
 
 .container__pokemons {
     display: flex;

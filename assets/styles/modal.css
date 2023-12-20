@@ -1,0 +1,16 @@
+.ImgFundoPokedex {
+    background-image: url(../imgs/pokedex.png);
+    width: 33.5rem;
+    min-height: 50rem;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divConteudo {
+    background: transparent;
+    font-size: 20px;
+    color: aqua;
+}
