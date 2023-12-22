@@ -25,6 +25,7 @@ async function fetchPokemonDetails (pokemonIdentifier) {
 
 async function fetchAndCreatePokemon(pokemonIdentifier) {
   const pokemonData = await fetchPokemonDetails(pokemonIdentifier)
+  console.log(pokemonData)
   return await criarCard(pokemonData);
 }
 

@@ -120,11 +120,32 @@ const criarCard = async (pokemon) => {
     info5.classList.add('modalInfoTexto');
     info5.textContent = `Movimentos : ${pokemon.moves[0].move.name}, ${pokemon.moves[1].move.name}, ${pokemon.moves[2].move.name}`
     
+    const info6 = document.createElement('p');
+    info6.classList.add('modalInfoTexto');
+    info6.textContent = `Hp: ${pokemon.stats[0].base_stat}`
+
+    const info7 = document.createElement('p');
+    info7.classList.add('modalInfoTexto');
+    info7.textContent = `Ataque: ${pokemon.stats[1].base_stat}`
+
+    const info8 = document.createElement('p');
+    info8.classList.add('modalInfoTexto');
+    info8.textContent = `Defesa: ${pokemon.stats[2].base_stat}`
+
+    const info9 = document.createElement('p');
+    info9.classList.add('modalInfoTexto');
+    info9.textContent = `Velocidade: ${pokemon.stats[5].base_stat}`
+
     infos.appendChild(info1);
     infos.appendChild(info2);
     infos.appendChild(info3);
     infos.appendChild(info4);
     infos.appendChild(info5);
+    infos.appendChild(info6);
+    infos.appendChild(info7);
+    infos.appendChild(info8);
+    infos.appendChild(info9);
+    
     
     divConteudo.appendChild(infos)
     divConteudo.appendChild(nome)
