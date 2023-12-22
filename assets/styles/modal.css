@@ -3,14 +3,39 @@
     width: 33.5rem;
     min-height: 50rem;
     background-repeat: no-repeat;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
 }
 
-.divConteudo {
-    background: transparent;
-    font-size: 20px;
-    color: aqua;
+.modalImg {
+    position: absolute;
+    right: 12rem;
+    bottom: 25rem;
+}
+
+.modalImgPadrao {
+    width: 11rem;
+    position: absolute;
+    right: 13rem;
+    bottom: 24rem;
+}
+
+.modalNome{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute;
+    text-transform: capitalize;
+    font-size: 24px;
+    right: 8.5rem;
+    bottom: 19rem;
+}
+
+.modalInfos {
+    position: absolute;
+    bottom: 9rem;
+    left: 5rem;
+}
+
+.modalInfoTexto {
+    font-weight: 600;
+    margin: 0;
+    color: white;
 }

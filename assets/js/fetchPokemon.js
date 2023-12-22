@@ -1,4 +1,4 @@
-import criarCard from "./cardsPokemon.js";
+import {criarCard, criarModal} from "./cardsPokemon.js";
 
 async function fetchPokemon(urlApi = 'https://pokeapi.co/api/v2/pokemon?') {
   try{
