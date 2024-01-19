@@ -4,9 +4,7 @@ Projeto Integrador do primeiro módulo do curso do Senac Tech em parceria com a 
 Desenvolvemos uma Pokedex com informaçoes de mais de 1000 pokemons.
 
 # Executando a Aplicação
-Clone o repositório: git clone [(https://github.com/LucasBalbueno/pokedex)] <br>
-Abra o VScode e instale a extensão do Live Server <br>
-Clique no Go Live situado no canto inferior direito da tela
+Abra o link no navegador: https://lucasbalbueno.github.io/pokedex/
 
 # Tecnologias
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
